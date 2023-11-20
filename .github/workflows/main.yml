@@ -21,10 +21,10 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
 
-    - name: Zip JAR file
-      run: |
-        cd target 
-        aws s3 cp aws-lambda-demo-1.0-SNAPSHOT.jar s3://java-lambda-s3
+    # - name: Zip JAR file
+    #   run: |
+    #     cd target 
+    #     aws s3 cp aws-lambda-demo-1.0-SNAPSHOT.jar s3://java-lambda-s3
 
     - name: Upload ZIP to S3
       uses: aws-actions/configure-aws-credentials@v2
