@@ -1,8 +1,8 @@
 name: Java with Maven and AWS
 
-on: workflow_dispatch
-  # push:
-  #   branches: [ "main" ]
+on: 
+  push:
+    branches: [ "master" ]
 
 jobs:
   build-and-deploy:
@@ -35,5 +35,6 @@ jobs:
     - run: |
         cd target 
         aws s3 cp aws-lambda-demo-1.0-SNAPSHOT.jar s3://java-lambda-s3
+        aws lambda update-function-code --function-name java --s3-bucket java-lambda-s3 --s3-key aws-lambda-demo-1.0-SNAPSHOT.jar
 
    
