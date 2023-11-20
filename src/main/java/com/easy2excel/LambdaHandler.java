@@ -7,6 +7,6 @@ public class LambdaHandler implements RequestHandler<String,String> {
     @Override
     public String handleRequest(String input, Context context) {
         context.getLogger().log("welcome to my first sai " + input);
-        return "welcome to my first " + input;
+        return "welcome to my first sai340 " + input;
     }
 }
